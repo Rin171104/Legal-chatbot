@@ -1,0 +1,61 @@
+haui-rag-chatbot/
+│
+├── README.md
+├── requirements.txt
+├── Dockerfile                # (optional – ăn điểm)
+├── .gitignore
+│
+├── data/                     # 📚 DỮ LIỆU (RẤT QUAN TRỌNG)
+│   ├── raw_docs/             # File gốc – KHÔNG SỬA
+│   │   ├── quy_che_dao_tao.pdf
+│   │   ├── quy_dinh_tin_chi.pdf
+│   │   └── xet_tot_nghiep.pdf
+│   │
+│   ├── processed/            # Text đã xử lý
+│   │   ├── quy_che_dao_tao.txt
+│   │   ├── quy_dinh_tin_chi.txt
+│   │   └── xet_tot_nghiep.txt
+│   │
+│   ├── chunks/               # Văn bản đã chia đoạn
+│   │   └── chunks.json
+│   │
+│   ├── embeddings/           # Vector embedding
+│   │   └── embeddings.npy
+│   │
+│   └── vectordb/             # FAISS index
+│       └── haui.index
+│
+├── metadata/                 # 🧾 THÔNG TIN NGUỒN
+│   └── sources.json
+│
+├── ingestion/                # 🔄 TIỀN XỬ LÝ DỮ LIỆU
+│   ├── load_docs.py          # Đọc PDF/DOC
+│   ├── clean_text.py         # Làm sạch text
+│   ├── chunk_text.py         # Chia đoạn
+│   ├── embed_text.py         # Tạo embedding
+│   └── build_index.py        # Tạo FAISS index
+│
+├── rag/                      # 🧠 LÕI RAG
+│   ├── embedder.py           # Load embedding model
+│   ├── retriever.py          # Top-k search
+│   ├── vector_store.py       # FAISS wrapper
+│   ├── prompt.py             # Prompt chống hallucination
+│   ├── generator.py          # Gọi LLM
+│   └── pipeline.py           # RAG pipeline end-to-end
+│
+├── api/                      # 🚀 BACKEND
+│   └── main.py               # FastAPI server
+│
+├── frontend/                 # 💬 GIAO DIỆN
+│   └── app.py                # Streamlit chat UI
+│
+├── evaluation/               # 📊 ĐÁNH GIÁ (ĂN ĐIỂM)
+│   ├── test_questions.json
+│   ├── evaluate.py
+│   └── results.csv
+│
+└── docs/                     # 📘 BÁO CÁO & HƯỚNG DẪN
+    ├── proposal.md           # Đề cương đồ án
+    ├── architecture.md       # Mô tả hệ thống
+    ├── dataset.md            # Mô tả dữ liệu
+    └── usage.md              # Hướng dẫn sử dụng

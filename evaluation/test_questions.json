@@ -1,0 +1,9 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Quy chế đào tạo của HAUI là gì?",
+      "expected_answer": "..."
+    }
+  ]
+}
