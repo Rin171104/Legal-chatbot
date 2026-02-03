@@ -1,4 +1,4 @@
-# HAUI RAG Chatbot
+# Legal RAG Chatbot
 
 Hệ thống chatbot thông minh giải đáp các câu hỏi về quy chế, quy định của Đại học HAUI.
 
